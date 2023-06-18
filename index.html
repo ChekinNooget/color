@@ -14,13 +14,14 @@
     <output></output>
     <canvas id="myCanvas"></canvas>
 </body>
-<script>const input = document.querySelector("input")
+<script>
+    //https://medium.com/@miguelznunez/how-to-upload-and-preview-an-image-with-javascript-749b92711b91
+    const input = document.querySelector("input")
     const output = document.querySelector("output")
     let imagesArray = []
-
     input.addEventListener("change", () => {
         const file = input.files
-        imagesArray.push(file[0])
+        imagesArray[0] = file[0]
         displayImages()
     })
     function displayImages() {
@@ -28,14 +29,9 @@
         imagesArray.forEach((image, index) => {
             images += `<div class="image">
                 <img src="${URL.createObjectURL(image)}" alt="image" id="myImage">
-                <span onclick="deleteImage(${index})">&times;</span>
               </div>`
         })
         output.innerHTML = images
-    }
-    function deleteImage(index) {
-        imagesArray.splice(index, 1)
-        displayImages()
     }</script>
 
 </html>
