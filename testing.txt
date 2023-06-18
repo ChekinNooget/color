@@ -1,0 +1,15 @@
+var c = document.getElementById("myCanvas");
+var img = document.getElementById("myImage");
+c.height = img.height
+c.width = img.width
+var ctx = c.getContext("2d");
+ctx.drawImage(img, 0, 0);
+
+function drawPixel(context, x, y, color) {
+	var roundedX = Math.round(x);
+    var roundedY = Math.round(y);
+    context.fillStyle = color || '#000';
+  	context.fillRect(roundedX, roundedY, 1, 1);
+}
+
+drawPixel(ctx, 0, 0, 'red');
