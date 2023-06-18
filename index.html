@@ -24,7 +24,7 @@ function displayImages() {
 	let images = ""
 	imagesArray.forEach((image, index) => {
 		images += `<div class="image">
-                <img src="${URL.createObjectURL(image)}" alt="image">
+                <img src="${URL.createObjectURL(image)}" alt="image" id="myImage">
                 <span onclick="deleteImage(${index})">&times;</span>
               </div>`
 	})
