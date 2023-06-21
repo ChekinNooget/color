@@ -13,9 +13,9 @@ if (localStorage.getItem("color") != null) {
 		addColor(temp[i])
 	}
 } else {
-	for (let i = 0; i < 3; i++) {
-		addColor("#000000")
-	}
+	addColor("#ff0000")
+	addColor("#00ff00")
+	addColor("#0000ff")
 }
 function displayImages() {
 	let images = ""
@@ -51,4 +51,3 @@ function setColorToStorage() {
 	}
 	localStorage.setItem("color", temp)
 }
-
