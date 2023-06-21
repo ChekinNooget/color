@@ -7,7 +7,7 @@ var resize
 
 function getVariables() {
 	resize = 1
-	colorsHex = [
+	/*colorsHex = [
 		"#9400D3",
 		"#4B0082",
 		"#0000FF",
@@ -17,12 +17,12 @@ function getVariables() {
 		"#FF0000",
 		"#000000",
 		"#FFFFFF",
-	]
+	]*/
 	colorsHex = []
 	var colorPicker = document.querySelectorAll(".color-picker")
-	colorsHex[0] = colorPicker[0].value
-	colorsHex[1] = colorPicker[1].value
-	colorsHex[2] = colorPicker[2].value
+	for (let i = 0; i < colorPicker.length; i++) {
+		colorsHex[i] = colorPicker[i].value
+	}
 }
 function hexToRgb(hex) {
 	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
