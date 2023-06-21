@@ -6,32 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Changer</title>
+    <script type="text/javascript" src="colors.js"></script>
 </head>
-
 <body>
     <!--<img src="nugget.jpg"></img>-->
     <input type="file" accept="image/jpeg, image/png, image/jpg">
+    <button onclick="colorButtonPressed()">Click me</button>
+    <input type="color" class="color-picker" value="#ff0000">
+    <input type="color" class="color-picker" value="#00ff00">
+    <input type="color" class="color-picker" value="#0000ff">
     <output></output>
     <canvas id="myCanvas"></canvas>
 </body>
-<script>
-    //https://medium.com/@miguelznunez/how-to-upload-and-preview-an-image-with-javascript-749b92711b91
-    const input = document.querySelector("input")
-    const output = document.querySelector("output")
-    let imagesArray = []
-    input.addEventListener("change", () => {
-        const file = input.files
-        imagesArray[0] = file[0]
-        displayImages()
-    })
-    function displayImages() {
-        let images = ""
-        imagesArray.forEach((image, index) => {
-            images += `<div class="image">
-                <img src="${URL.createObjectURL(image)}" alt="image" id="myImage">
-              </div>`
-        })
-        output.innerHTML = images
-    }</script>
-
+<script src="image-loader.js"></script>
 </html>
