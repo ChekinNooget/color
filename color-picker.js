@@ -18,3 +18,13 @@ function deleteColor(element) {
 	document.querySelector(`.${element}`).remove()
 	setColorToStorage()
 }
+
+function setColorToStorage() {
+	var tempPickers = document.querySelectorAll(".color-picker")
+	var temp = ""
+	for (let i = 0; i < tempPickers.length; i++) {
+		temp = temp + tempPickers[i].value + " "
+	}
+	localStorage.setItem("color", temp)
+}
+
