@@ -101,3 +101,8 @@ function colorButtonPressed() {
 	getCanvas()
 	changeColor()
 }
+
+function openImage(){
+	const canvas = document.getElementById("myCanvas");
+	canvas.toBlob((blob) => window.open(URL.createObjectURL(blob), '_blank'));
+}
