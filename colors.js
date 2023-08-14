@@ -82,7 +82,7 @@ function changeColor() {
 					j * resize,
 					colorsHex[scores.indexOf(Math.min(...scores))] //smallest difference
 				)
-			} els e{
+			} else {
 				drawPixel(
 					ctx,
 					i * resize,
