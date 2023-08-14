@@ -25,8 +25,10 @@ function displayImages() {
 			  </div>`
 	})
 	output.innerHTML = images;
-	document.querySelector(".image").setAttribute("style", `height: ${document.querySelector(".image").firstElementChild.naturalHeight};`);
-	document.querySelector(".image").firstElementChild.setAttribute("title", "Open image in new tab")
+	var imageElem = document.querySelector(".image").firstElementChild
+	document.querySelector(".image").setAttribute("style", `height: ${imageElem.naturalHeight};`);
+	imageElem.setAttribute("title", "Open image in new tab");
+	imageElem.setAttribute("onclick", `window.open(${imageElem}.src, "_blank")`);
 }
 
 var tempPickers = document.querySelectorAll(".color-picker")
