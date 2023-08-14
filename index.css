@@ -16,3 +16,6 @@ output > .image > img, canvas {
     width: 100vw;
     justify-content: center;
 }
+canvas#myCanvas:hover, .image > img:hover {
+    cursor: pointer;
+}
