@@ -26,6 +26,7 @@ function displayImages() {
 	})
 	output.innerHTML = images;
 	document.querySelector(".image").setAttribute("style", `height: ${document.querySelector(".image").firstElementChild.naturalHeight};`)
+	document.querySelector(".image").firstChildElement.setAttribute("title", "Open image in new tab")
 }
 
 var tempPickers = document.querySelectorAll(".color-picker")
