@@ -68,19 +68,28 @@ function changeColor() {
 	for (let i = 0; i < img.width; i++) {
 		for (let j = 0; j < img.height; j++) {
 			data = ctx.getImageData(i * resize, j * resize, 1, 1).data
-			imageData = [data[0], data[1], data[2]]
-			for (let k = 0; k < colorsHex.length; k++) {
-				colorDiff[0] = Math.abs(colorsToMatch[k].r - imageData[0])
-				colorDiff[1] = Math.abs(colorsToMatch[k].g - imageData[1])
-				colorDiff[2] = Math.abs(colorsToMatch[k].b - imageData[2])
-				scores[k] = Math.max(...colorDiff) //gets smallest difference in rgb value
+			imageData = [data[0], data[1], data[2], data[3]]
+			if(imageData[3] != 0){
+				for (let k = 0; k < colorsHex.length; k++) {
+					colorDiff[0] = Math.abs(colorsToMatch[k].r - imageData[0])
+					colorDiff[1] = Math.abs(colorsToMatch[k].g - imageData[1])
+					colorDiff[2] = Math.abs(colorsToMatch[k].b - imageData[2])
+					scores[k] = Math.max(...colorDiff) //gets smallest difference in rgb value
+				}
+				drawPixel(
+					ctx,
+					i * resize,
+					j * resize,
+					colorsHex[scores.indexOf(Math.min(...scores))] //smallest difference
+				)
+			} els e{
+				drawPixel(
+					ctx,
+					i * resize,
+					j * resize,
+					"#ffffff" //smallest difference
+				)
 			}
-			drawPixel(
-				ctx,
-				i * resize,
-				j * resize,
-				colorsHex[scores.indexOf(Math.min(...scores))] //smallest difference
-			)
 		}
 	}
 }
