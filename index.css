@@ -9,7 +9,7 @@
     width: fit-content;
 }
 output > .image > img, canvas {
-    width: 25vw;
+    max-width: 25vw;
 }
 .image-group {
     display: flex;
