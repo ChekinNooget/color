@@ -21,12 +21,11 @@ function displayImages() {
 	let images = ""
 	imagesArray.forEach((image, index) => {
 		images += `<div class="image">
-                <img src="${URL.createObjectURL(
-									image
-								)}" alt="image" id="myImage">
-              </div>`
+			  	<img src="${URL.createObjectURL(image)}" alt="image" id="myImage">
+			  </div>`
 	})
-	output.innerHTML = images
+	output.innerHTML = images;
+	document.querySelector(".image").setAttribute("style", `height: ${document.querySelector(".image").firstElementChild.naturalHeight};`)
 }
 
 var tempPickers = document.querySelectorAll(".color-picker")
