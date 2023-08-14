@@ -10,7 +10,6 @@ function addColor(color) {
 							pickerCount + 1
 						}')">&times;</div> 
         </div>`
-	console.log(pickers)
 	setColorToStorage()
 }
 
